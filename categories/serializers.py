@@ -117,7 +117,7 @@ class RecursiveField(Field):
 class CategorySerializer(serializers.ModelSerializer):
     children = serializers.ListSerializer(child=RecursiveField())
     siblings = serializers.SerializerMethodField("get_siblings")
-    parents = serializers.SerializerMethodField("get_parent")
+    parents = serializers.SerializerMethodField("get_parents")
 
     def get_siblings(self, obj):
         return "siblings"
